@@ -74,7 +74,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "localhost:3000/",
+    "http://localhost:3000/",
 ]
 
 ROOT_URLCONF = 'PPMcrud.urls'
