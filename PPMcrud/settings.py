@@ -101,9 +101,9 @@ DATABASES = {
 
     #render PostgreSQL confg
     'default': dj_database_url.config(      
-        #default='postgresql://postgres:postgres@localhost:5432/mysite',
+        default='postgresql://postgres:postgres@localhost:5432/mysite',
         #uncomment next default and comment last default to change from postgre to sqlite3 to work on production
-        default='sqlite:///db.sqlite3',
+        #default='sqlite:///db.sqlite3',
         conn_max_age=600
     )
 }
