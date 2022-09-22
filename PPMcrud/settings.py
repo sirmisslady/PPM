@@ -73,7 +73,9 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsPostCsrfMiddleware",
 ]
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOWED_ORIGINS = [
+    "localhost:3000/",
+]
 
 ROOT_URLCONF = 'PPMcrud.urls'
 
