@@ -19,7 +19,7 @@ class PacienteSerializer(serializers.ModelSerializer):
     #paciente_phones = PacientePhoneSerializer(many=True, source="pacientephone_set")
     class Meta:
         model = Paciente
-        fields = ('id', 'nombre')
+        fields = ('id', 'nombre', 'apellido_pat', 'apellido_mat', 'direccion')
 
 class PacienteNumberSerializer(serializers.ModelSerializer):
     paciente_phones = PacientePhoneSerializer(many=True, source="pacientephone_set")
