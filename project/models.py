@@ -20,4 +20,4 @@ class Paciente(models.Model):
 class PacientePhone(models.Model):
     paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
     phone = models.ForeignKey(Phone, on_delete=models.CASCADE)
-    active = models.CharField(max_length=1)
+    active = models.BooleanField()
