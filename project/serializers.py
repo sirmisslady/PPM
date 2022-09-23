@@ -16,6 +16,12 @@ class PacientePhoneSerializer(serializers.ModelSerializer):
         fields = ('id', 'active', 'paciente', 'phone', 'phone_number')
 
 class PacienteSerializer(serializers.ModelSerializer):
+    #paciente_phones = PacientePhoneSerializer(many=True, source="pacientephone_set")
+    class Meta:
+        model = Paciente
+        fields = ('id', 'nombre')
+
+class PacienteNumberSerializer(serializers.ModelSerializer):
     paciente_phones = PacientePhoneSerializer(many=True, source="pacientephone_set")
     class Meta:
         model = Paciente
