@@ -1,14 +1,23 @@
 from django.db import models
 
 # Create your models here.
-class Paciente(models.Model):
-    nombre = models.CharField(max_length=200)
+
 
 class Phone(models.Model):
-    phone = models.CharField(max_length=15)
+    number = models.CharField(max_length=15)
+    #pacientes = models.ManyToManyField(Paciente, through='PacientePhone')
 
-class Email(models.Model):
-    email = models.CharField(max_length=200)
+    def __str__(self):
+        return self.number
 
-#class PhonePaciente():
-    #phone_id = models.IntegerField
+class Paciente(models.Model):
+    nombre = models.CharField(max_length=200)
+    paciente_phones = models.ManyToManyField(Phone, through='PacientePhone')
+
+    def __str__(self):
+        return self.nombre
+
+class PacientePhone(models.Model):
+    paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
+    phone = models.ForeignKey(Phone, on_delete=models.CASCADE)
+    active = models.CharField(max_length=1)
